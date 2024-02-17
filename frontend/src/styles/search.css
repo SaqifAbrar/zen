@@ -1,3 +1,17 @@
 .search {
     background-color: #1e1e1e;
+
+}
+
+.search-bar {
+    background-color: whitesmoke;
+    border: #000000;
+    border-radius: 40mm;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.search-placeholder {
+    color: var(--darkerblack);
+
 }
