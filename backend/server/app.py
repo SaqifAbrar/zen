@@ -3,6 +3,10 @@ from rag import zen_rag
 
 app = Flask(__name__)
 
+@app.route("/")
+def hello_world():
+    return "<p>You've zengine backend</p>"
+
 @app.route("/api/")
 def hello_world():
     return "<p>You've accessed /api</p>"
