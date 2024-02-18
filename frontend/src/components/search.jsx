@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { motion, useAnimationControls } from "framer-motion";
+import { useNavigate } from 'react-router-dom';
 
 
 function Search() {
@@ -15,7 +16,13 @@ function Search() {
     function search(formData) {
         const query = formData.get("query");
         alert(`You searched for '${query}'`);
+
     }
+    const navigate = useNavigate();
+    function handleClick() {
+        navigate('/query');
+    }
+
 
     return (
         <div className="search">
@@ -23,7 +30,7 @@ function Search() {
             <motion.div whileHover={{ scale: 1.2 }} >
                 <label className="search-area">
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    <form action={search}>
+                    <form action={search} onSubmit={handleClick}>
                         <input name="query" className="search-bar" value={query} defaultValue={'Search for a Zen page or type a URL'} onChange={e => setQuery(e.target.value)} />
                         {/* <button type="submit">Search</button> */}
                     </form>
@@ -32,12 +39,6 @@ function Search() {
             <div>
                 {query !== '' && <p>Your Query: {query}</p>}
             </div>
-
-
-
-
-
-
         </div>
 
     );
