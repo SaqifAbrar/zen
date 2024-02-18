@@ -16,7 +16,7 @@ from langchain import hub
 from langchain.chains import RetrievalQA
 
 def main():
-    parser = argparse.ArgumentParser(description='Filter out URL argument.')
+    '''parser = argparse.ArgumentParser(description='Filter out URL argument.')
     parser.add_argument('--url', type=str, default='http://example.com', required=True, help='The URL to filter out.')
 
     args = parser.parse_args()
@@ -32,9 +32,13 @@ def main():
     print(f"Split into {len(all_splits)} chunks")
 
     vectorstore = Chroma.from_documents(documents=all_splits,
-                                        embedding=GPT4AllEmbeddings())
+                                        embedding=GPT4AllEmbeddings(), 
+                                        persist_directory="./chroma_db")'''
+    
+    vectorstore = Chroma(persist_directory="./chroma_db", embedding_function=GPT4AllEmbeddings())
 
-    print(f"Loaded {len(data)} documents")
+    #print(f"Loaded {len(data)} documents")
+    url = "https://en.wikipedia.org/wiki/koi"
 
     # RAG prompt
     
@@ -56,7 +60,7 @@ def main():
     )
 
     # Ask a question
-    question = f"What are koi fish {url}?"
+    question = f"Give me 5 fun facts about koi fish"
     result = qa_chain({"query": question})
 
     for x in range(len(result["source_documents"][0].metadata)):
