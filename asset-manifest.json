@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/zen/static/css/main.270e429e.css",
+    "main.js": "/zen/static/js/main.b56462a3.js",
+    "static/js/453.f861d24f.chunk.js": "/zen/static/js/453.f861d24f.chunk.js",
+    "static/media/koi-img.jpg": "/zen/static/media/koi-img.1543739bbd750ffd64da.jpg",
+    "static/media/koiZen.svg": "/zen/static/media/koiZen.6dde3d897217410d8f33c8c4fdbd9912.svg",
+    "index.html": "/zen/index.html",
+    "main.270e429e.css.map": "/zen/static/css/main.270e429e.css.map",
+    "main.b56462a3.js.map": "/zen/static/js/main.b56462a3.js.map",
+    "453.f861d24f.chunk.js.map": "/zen/static/js/453.f861d24f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.270e429e.css",
+    "static/js/main.b56462a3.js"
+  ]
+}
