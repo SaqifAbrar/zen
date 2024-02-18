@@ -9,10 +9,13 @@ import { motion, useAnimationControls } from "framer-motion";
 
 function Search() {
 
-    const [firstName, setFirstName] = useState('');
+    const [query, setQuery] = useState('');
     // const [age, setAge] = useState('20');
     // const ageAsNumber = Number(age);
-
+    function search(formData) {
+        const query = formData.get("query");
+        alert(`You searched for '${query}'`);
+    }
 
     return (
         <div className="search">
@@ -20,12 +23,20 @@ function Search() {
             <motion.div whileHover={{ scale: 1.2 }} >
                 <label className="search-area">
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    <input className="search-bar" value={firstName} onChange={e => setFirstName(e.target.value)} />
+                    <form action={search}>
+                        <input name="query" className="search-bar" value={query} defaultValue={'Search for a Zen page or type a URL'} onChange={e => setQuery(e.target.value)} />
+                        {/* <button type="submit">Search</button> */}
+                    </form>
                 </label>
             </motion.div>
             <div>
-                {firstName !== '' && <p>Your Query: {firstName}</p>}
+                {query !== '' && <p>Your Query: {query}</p>}
             </div>
+
+
+
+
+
 
         </div>
 
@@ -33,28 +44,3 @@ function Search() {
 }
 
 export default Search;
-
-// import { useState } from 'react';
-
-// export default function Form() {
-//     const [firstName, setFirstName] = useState('');
-//     const [age, setAge] = useState('20');
-//     const ageAsNumber = Number(age);
-//     return (
-//         <>
-//             <label>
-//                 First name:
-//                 <input value={firstName} onChange={e => setFirstName(e.target.value)} />
-//             </label>
-//             <label>
-//                 Age:
-//                 <input value={age} onChange={e => setAge(e.target.value)} type="number" />
-//                 <button onClick={() => setAge(ageAsNumber + 10)}> Add 10 years </button>
-//             </label>
-//             {firstName !== '' && <p>Your name is {firstName}.</p>
-//             }
-//             {ageAsNumber > 0 &&<p>Your age is {ageAsNumber}.</p>
-//             }
-//         </>
-//     );
-// }
