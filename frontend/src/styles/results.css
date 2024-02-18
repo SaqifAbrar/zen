@@ -1,0 +1,21 @@
+.results-page {
+    margin: 2rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.column{
+	flex: 1; /* Standard syntax */
+}
+
+.banner {
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+}
+
+.koi-img-card {
+    width: 25vw;
+    border-radius: 40px;
+    box-shadow: -4px 4px 70px #000000;
+}

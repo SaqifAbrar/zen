@@ -19,6 +19,7 @@ function Search() {
 
     }
     const navigate = useNavigate();
+
     function handleClick() {
         navigate('/query');
     }

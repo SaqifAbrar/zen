@@ -1,0 +1,9 @@
+.header-card {
+    border-radius: 40px;
+    background-color: var(--lighterblack);
+    box-shadow: -4px 4px 70px #000000;
+    width: 50vw;
+    text-align: left;
+    padding: 2rem;
+    height: min-content;
+}

@@ -1,13 +1,14 @@
-import "../styles/search.css"
+import "../styles/results.css"
 import Logo from "../assets/koiZen.svg"
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { motion, useAnimationControls } from "framer-motion";
+import Header from "./header"
+import Koi from "../assets/koi-img.jpg"
 
-
-function Search() {
+function Results() {
 
     const [query, setQuery] = useState('');
     // const [age, setAge] = useState('20');
@@ -18,13 +19,18 @@ function Search() {
     }
 
     return (
-        <div className="search">
-            <img className="zen-icon" src={Logo} alt="logo" />
-            <h2>TESTINNGGGG MY PRETTIES</h2>
-
+        <div className="results-page">
+            <div className="banner">
+                <div className="column">
+                    <Header />
+                </div>
+                <div className="column">
+                    <img className="koi-img-card" src={Koi} alt="Fish Search Result" />
+                </div>
+            </div>
         </div>
 
     );
 }
 
-export default Search;
+export default Results;

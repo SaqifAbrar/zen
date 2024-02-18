@@ -1,5 +1,5 @@
 import Search from "./components/search"
-import MyForm from "./components/sample"
+import MyForm from "./components/results"
 
 import './App.css';
 import React from 'react';
